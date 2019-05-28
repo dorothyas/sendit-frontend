@@ -19,6 +19,12 @@ module.exports = {
     // The paths to modules that run some code to configure or set up the testing environment before each test
     setupFiles: ['<rootDir>/src/setupTest.js'],
 
+    // A map from regular expressions to module names that allow to stub out resources 
+    // with a single module
+    moduleNameMapper: {
+        '\\.(css|scss|jpg|png)$': '<rootDir>/ignore-module.js',
+    },
+
     // The test environment that will be used for testing
     testEnvironment: 'jest-environment-jsdom',
 
