@@ -3,6 +3,8 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import Landing from './Landing';
 import LoginForm from './LoginComponent';
 import ParcelsForm from './ParcelsComponent'
+import SignUpForm from './SignupComponent';
+import LoginForm from './LoginComponent';
 
 const Routes = () => (
   <>
@@ -11,7 +13,8 @@ const Routes = () => (
         <Route exact path="/" component={Landing} />
         <Route path="/login" component={LoginForm} />
         <Route path="/parcels" component={ParcelsForm} />
-      </switch>
+        <Route path="/register" component={SignUpForm} />
+      </switch>/>
     </Router>
     </>
 );
