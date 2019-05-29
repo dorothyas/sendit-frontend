@@ -2,4 +2,6 @@
 
 [![Build Status](https://travis-ci.com/dorothyas/sendit-frontend.svg?branch=develop)](https://travis-ci.com/dorothyas/sendit-frontend)
 
-[![Coverage Status](https://coveralls.io/repos/github/dorothyas/sendit-frontend/badge.svg?branch=develop)](https://coveralls.io/github/dorothyas/sendit-frontend?branch=develop)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/dce64fb9540439fad350/test_coverage)](https://codeclimate.com/github/dorothyas/sendit-frontend/test_coverage)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/dce64fb9540439fad350/maintainability)](https://codeclimate.com/github/dorothyas/sendit-frontend/maintainability)
