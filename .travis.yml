@@ -13,7 +13,7 @@ git:
     - true
 
 before_script:
-  - export CC_TEST_REPORTER_ID=8750ba1d833760b0775e34e5e18c7328d9f081a3ab331c8f345818d9d6a2236e
+  - export CC_TEST_REPORTER_ID=af25a20f2a1169b8d9c86e0d67b663af715c162718e519d6fd468dc9c66b8552
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
@@ -23,5 +23,5 @@ script:
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
   - jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
-Collapse
+Collapse 
 
