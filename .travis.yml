@@ -5,6 +5,15 @@ dist: trusty
 install:
 #  - npm cache clean
  - npm install
+env:
+  global:
+    - CC_TEST_REPORTER_ID=af25a20f2a1169b8d9c86e0d67b663af715c162718e519d6fd468dc9c66b8552
+before_script:
+  - export CC_TEST_REPORTER_ID=af25a20f2a1169b8d9c86e0d67b663af715c162718e519d6fd468dc9c66b8552
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
- - npm run test
- - npm run build
+ - npm run test:coverage
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

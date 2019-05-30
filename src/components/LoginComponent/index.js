@@ -11,7 +11,6 @@ class LoginForm extends Component {
             username: '',
             email: '',
             password: ''
-            // ,,,,,,,
         };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
