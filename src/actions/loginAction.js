@@ -1,7 +1,7 @@
 import { LOGIN_FAIL, LOGIN_SUCCESS } from './types';
 import { toast } from "react-toastify";
 
-const loginAction = loginData => (dispatch) => {
+const loginAction = (loginData, props) => (dispatch) => {
 
     return fetch(`https://stargal-dorothy.herokuapp.com/api/v1/auth/login`, {
         method: 'POST',
@@ -22,18 +22,18 @@ const loginAction = loginData => (dispatch) => {
                     type: LOGIN_FAIL,
                     payload: data.errors,
                 });
-
             } else {
                 toast.success(`${data.message}`, {
                     position: toast.POSITION.TOP_RIGHT,
                     autoClose: 5000,
-                    hideProgressBar: false
+                    hideProgressBar: false,
+                    onClose: props.history.push("/parcels")
                 });
+                localStorage.setItem('auth_token', data.access_token)
                 dispatch({
                     type: LOGIN_SUCCESS,
                     payload: data,
                 });
-
             }
         },
         )

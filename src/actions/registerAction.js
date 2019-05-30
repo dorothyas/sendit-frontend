@@ -12,30 +12,30 @@ const registerAction = registerData => (dispatch) => {
     })
         .then(response => response.json())
         .then((data) => {
-            if (data.Message === "Email already exists") {
-                console.log(data.Message)
-                toast.success(`${data.Message}`, {
-                    position: toast.POSITION.TOP_RIGHT,
-                    autoClose: 5000,
-                    hideProgressBar: false
-                });
+            if (data.Message === "Email already exists" || data.Message === "Passwords do not match") {
+
                 dispatch({
                     type: REGISTER_FAIL,
                     payload: data.errors,
                 });
-                
-            } else {
                 toast.success(`${data.Message}`, {
                     position: toast.POSITION.TOP_RIGHT,
                     autoClose: 5000,
                     hideProgressBar: false
                 });
-                
+            } else {
+    
+                toast.success(`${data.Message}`, {
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 5000,
+                    hideProgressBar: false
+                });
+
                 dispatch({
                     type: REGISTER_SUCCESS,
                     payload: data,
                 });
-                
+
             }
         },
         )

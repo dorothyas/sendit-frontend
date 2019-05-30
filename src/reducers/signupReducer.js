@@ -17,6 +17,7 @@ const signupReducer = (state = initialState, action) => {
         case REGISTER_FAIL:
             return {
                 ...state,
+                isSuccessful: false,
                 errors: action.payload
             };
         default:

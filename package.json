@@ -60,9 +60,11 @@
   "dependencies": {
     "coveralls": "^3.0.3",
     "express": "^4.17.1",
+    "jwt-decode": "^2.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
+    "react-spinners": "^0.5.4",
     "react-toastify": "^5.2.0"
   }
 }
