@@ -8,9 +8,10 @@ class LoginForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username:'',
+            username: '',
             email: '',
             password: ''
+            // ,,,,,,,
         };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -38,14 +39,14 @@ class LoginForm extends Component {
                                 <h1>Welcome Back!</h1>
                                 <h2>Sign In</h2>
                                 <input type="text" name="username" value={this.state.username} placeholder="Name" onChange={this.onChange} />
-                                <input type="password" name="password" value={this.state.password} placeholder="Password" onChange={this.onChange} min="8"/>
+                                <input type="password" name="password" value={this.state.password} placeholder="Password" onChange={this.onChange} min="8" />
                                 <button>Sign in</button>
                                 <br />
                                 <div><Link to='/register' className="link">Don't Have an account? SignUp here.</Link></div>
                             </form>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         )
     }
@@ -66,4 +67,4 @@ LoginForm.propTypes = {
         error: PropTypes.any,
     }),
 }
-export default connect(mapStateToProps, {loginAction}) (LoginForm);
+export default connect(mapStateToProps, { loginAction })(LoginForm);
